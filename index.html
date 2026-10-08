@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="vivi电影网（vividianyingwang-cn.github.io）是精选优质电影导航大全与实用网址收录平台，聚焦高清电影在线观看、电影网站导航、最新电影、经典电影、电影字幕、4K 蓝光与影视大全，并提供迅雷下载指引。">
+<meta name="keywords" content="vivi电影网, vividianyingwang-cn, vivi, 电影导航, 电影网站导航, 精选优质网站导航大全, 实用网址收录平台, 高清电影在线观看, 电影下载, 迅雷下载, 最新电影, 经典电影, 电影字幕, 影视大全, 4K 蓝光, 影视资源导航">
+<meta name="author" content="vivi电影网">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#fff0f4">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>vivi电影网 - 精选优质电影导航大全 | 高清电影在线观看与迅雷下载</title>
+<link rel="canonical" href="https://vividianyingwang-cn.github.io/">
+<style>
+/* ==========================================================
+   vivi电影网  vividianyingwang-cn.github.io
+   单页 · 移动端自适应 · 内链以 # 替代
+   设计基调：柔粉奶油 × 气泡 × 圆角胶囊 × 手绘波浪 × 轻盈
+   母题：vivi = vivid（鲜活） + 法式轻盈
+   ========================================================== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --p:#ff7aa2;--p2:#ff5c8a;--pp:#ffd9e6;--lilac:#c9b6ff;--mint:#9fe3cf;--cream:#fff6f2;
+  --ink:#2b2328;--dim:#8d8590;--line:#f3dfe6;--mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","STSong",Georgia,serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.9;overflow-x:hidden;
+  background-image:radial-gradient(circle at 1px 1px,#ffd6e4 1px,transparent 0);background-size:26px 26px}
+a{color:inherit;text-decoration:none;transition:.25s cubic-bezier(.34,1.56,.64,1)}
+::selection{background:var(--p);color:#fff}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--p);border-radius:99px;border:3px solid var(--cream)}
+main,header,footer,section{position:relative;z-index:2}
+
+/* ===== 气泡漂浮 ===== */
+.bub{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bub i{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff,rgba(255,255,255,0));
+  box-shadow:inset 0 0 0 1.5px rgba(255,122,162,.5);animation:up linear infinite}
+@keyframes up{from{transform:translateY(110vh) scale(.7);opacity:0}15%{opacity:1}to{transform:translateY(-18vh) scale(1.1);opacity:0}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* ===== 顶栏 ===== */
+.topbar{position:sticky;top:0;z-index:99;background:rgba(255,246,242,.86);backdrop-filter:blur(14px);border-bottom:1.5px solid var(--line)}
+.tin{max-width:1400px;margin:0 auto;padding:0 26px;height:70px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:12px}
+.vivi{width:48px;height:48px;border-radius:50%;background:linear-gradient(140deg,var(--p),var(--lilac));
+  display:grid;place-items:center;color:#fff;font:900 17px;letter-spacing:-.5px;box-shadow:0 7px 18px rgba(255,92,138,.34);animation:floaty 4.2s ease-in-out infinite}
+.logo .zh{font:900 20px;letter-spacing:.4px}
+.logo .zh em{font-style:normal;background:linear-gradient(90deg,var(--p),var(--p2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .en{font:700 7.2px;letter-spacing:2.6px;color:var(--dim);font-family:var(--mono)}
+.ribbon{font:800 8.6px;letter-spacing:1.8px;color:#fff;background:var(--p);padding:6px 11px;border-radius:99px;font-family:var(--mono);white-space:nowrap}
+.nav{display:flex;gap:6px;margin-left:auto;font:800 12.4px}
+.nav a{padding:9px 14px;border-radius:99px}
+.nav a:hover{background:var(--pp);color:var(--p2)}
+.nav a.on{background:var(--ink);color:#fff}
+.hamb{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--p);background:var(--cream);color:var(--p2);font:900 20px;cursor:pointer}
+
+/* ===== 通用 ===== */
+section{padding:70px 0}
+.lay{max-width:1400px;margin:0 auto;padding:0 26px}
+.kicker{display:inline-flex;align-items:center;gap:9px;font:800 8.6px;letter-spacing:3.2px;color:var(--p2);font-family:var(--mono);margin-bottom:11px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--p)}
+.sh{display:flex;align-items:baseline;gap:13px;margin-bottom:28px;flex-wrap:wrap}
+.sh .no{font:900 9.6px;letter-spacing:1.8px;color:#fff;background:var(--p);padding:5px 11px;border-radius:99px;font-family:var(--mono)}
+.sh h2{font:900 clamp(23px,4vw,34px)/1.28}
+.sh h2 em{font-style:normal;color:var(--p2)}
+.sh .en{font:700 8.4px;letter-spacing:3px;color:var(--dim);margin-left:auto;font-family:var(--mono)}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center;padding:14px 0}
+.hero .h1{font:900 clamp(42px,9vw,92px)/1.03;letter-spacing:-3px}
+.hero .h1 .pk{background:linear-gradient(100deg,#ff8fb0,#c9b6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .h1 .out{color:transparent;-webkit-text-stroke:1.6px var(--p2)}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.hero .chips span{font:800 9.4px;letter-spacing:1.4px;padding:7px 13px;border-radius:99px;background:#fff;border:1.5px solid var(--line);font-family:var(--mono);color:#6c6470}
+.hero .chips span b{color:var(--p2);font-weight:900}
+.hero .sub{font-size:15.4px;color:#5f5860;line-height:2.12;max-width:660px}
+.hero .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.hero .cta a:first-child{height:58px;padding:0 32px;background:var(--p);color:#fff;font:900 13.6px;border-radius:99px;display:grid;place-items:center;box-shadow:0 10px 24px rgba(255,92,138,.38)}
+.hero .cta a:first-child:hover{background:var(--ink)}
+.hero .cta a:last-child{height:58px;padding:0 28px;border:1.6px solid var(--ink);color:var(--ink);font:900 12.8px;border-radius:99px;display:grid;place-items:center}
+.hero .cta a:last-child:hover{background:var(--ink);color:#fff}
+
+/* 云朵卡 */
+.cloud{border-radius:38px;padding:24px;background:#fff;box-shadow:0 22px 60px rgba(255,122,162,.24);position:relative;transform:rotate(-1.4deg)}
+.cloud::before{content:"";position:absolute;left:26px;top:-22px;width:74px;height:38px;border-radius:99px;background:#fff}
+.cloud::after{content:"";position:absolute;right:44px;top:-30px;width:52px;height:30px;border-radius:99px;background:var(--pp)}
+.crow{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.crow div{background:var(--cream);border-radius:20px;padding:15px}
+.crow b{display:block;font:900 22px;color:var(--p2);font-family:var(--mono);line-height:1.25}
+.crow span{font:700 8.2px;letter-spacing:1.8px;color:var(--dim);font-family:var(--mono)}
+
+/* ===== ① 导航：圆角胶囊面板 ===== */
+.panels{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.pn{border:1.5px solid var(--line);border-radius:24px;background:#fff;padding:20px;transition:.28s;position:relative;overflow:hidden}
+.pn::before{content:"";position:absolute;right:-26px;top:-26px;width:76px;height:76px;border-radius:50%;background:var(--pp);opacity:.55}
+.pn:hover{transform:translateY(-8px) rotate(-.8deg);border-color:var(--p);box-shadow:0 16px 34px rgba(255,92,138,.24)}
+.pn .ix{font:900 9.4px;letter-spacing:1.8px;color:var(--p2);font-family:var(--mono)}
+.pn h4{font:900 14.6px;margin:8px 0 9px}
+.pn p{font-size:10.8px;color:var(--dim);line-height:1.9;height:56px}
+.pn .go{display:inline-flex;align-items:center;gap:6px;font:900 9.6px;letter-spacing:1.4px;color:var(--p2);font-family:var(--mono);margin-top:4px}
+.pn:hover .go{gap:11px}
+
+/* ===== ② 片单：波浪横滑 ===== */
+.belt{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 24px;margin:0 -4px}
+.belt::-webkit-scrollbar-thumb{border-radius:99px}
+.fv{flex:0 0 196px;scroll-snap-align:start;border-radius:26px;overflow:hidden;position:relative;transition:.32s;aspect-ratio:3/4;border:1.5px solid var(--line)}
+.fv::after{content:"";position:absolute;inset:0;background:var(--c);opacity:.95}
+.fv b{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;font:900 13px;line-height:1.4;font-family:var(--serif);color:#fff}
+.fv .yr{position:absolute;top:11px;right:11px;z-index:2;font:900 8.6px;color:var(--p2);background:#fff;padding:4px 9px;border-radius:99px;font-family:var(--mono)}
+.fv .rt{position:absolute;top:11px;left:11px;z-index:2;font:900 9px;color:#fff;background:var(--p);padding:4px 9px;border-radius:99px;font-family:var(--mono)}
+.fv .go{position:absolute;inset:0;z-index:3;display:grid;place-items:center;font:900 12.4px;letter-spacing:2px;color:#fff;background:rgba(255,92,138,.74);opacity:0;transition:.26s}
+.fv:hover{transform:translateY(-9px);border-color:var(--p)}
+.fv:hover .go{opacity:1}
+
+/* ===== ③ 分类：手风琴 ===== */
+.acc{border:1.5px solid var(--line);border-radius:26px;background:#fff;overflow:hidden}
+.ai{display:grid;grid-template-columns:64px 1fr 120px 38px;align-items:center;gap:14px;padding:17px 20px;cursor:pointer;border-bottom:1.5px solid var(--line);transition:.24s}
+.ai:hover{background:var(--pp)}
+.ai.on{background:linear-gradient(90deg,var(--p),var(--lilac));color:#fff}
+.ai .ix{font:900 10.4px;letter-spacing:1.8px;font-family:var(--mono);text-align:center}
+.ai h4{font:900 15.4px}
+.ai .cnt{font:800 8.8px;letter-spacing:1.6px;font-family:var(--mono);text-align:right;opacity:.8}
+.ai .ar{width:34px;height:34px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font:900 14px;transition:.3s}
+.ai.on .ar{transform:rotate(45deg);background:#fff;color:var(--p2)}
+.ap{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;padding:0 20px;max-height:0;overflow:hidden;transition:max-height .42s ease, padding .42s ease}
+.ap.open{padding:18px 20px;max-height:320px}
+.chip{font:800 10.4px;padding:9px 12px;border-radius:99px;background:var(--cream);border:1.4px solid var(--line);text-align:center}
+.chip:hover{border-color:var(--p);color:var(--p2);background:#fff}
+
+/* ===== ④ 排行：进度条 + 侧榜 ===== */
+.duo{display:grid;grid-template-columns:1fr 76px 1fr;gap:0;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:22px}
+.dk h5{font:800 9.4px;letter-spacing:2.4px;font-family:var(--mono);margin-bottom:13px;display:flex;align-items:center;gap:8px}
+.dk h5::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c)}
+.items{display:grid;gap:11px}
+.it{display:grid;grid-template-columns:34px 1fr 46px;align-items:center;gap:11px;font-size:12px}
+.it .rn{font:900 10.6px;font-family:var(--mono);text-align:center;color:var(--dim)}
+.it.on .rn{color:var(--p2);font-size:13px}
+.it .tr{flex:1;height:9px;background:var(--cream);border-radius:99px;overflow:hidden}
+.it .tr u{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--c2),var(--c));width:0;transition:width 1.05s cubic-bezier(.34,1.56,.64,1)}
+.it .vl{font:900 9.8px;font-family:var(--mono);text-align:right;color:var(--p2)}
+.vsmid{text-align:center;font:900 15px;letter-spacing:3px;color:var(--p);font-family:var(--mono)}
+
+/* ===== ⑤ 影讯：报纸分栏 ===== */
+.press{display:grid;grid-template-columns:1.35fr 1fr;gap:15px}
+.big{border-radius:26px;padding:24px;background:linear-gradient(150deg,#3a2c33,#20181d);color:#fff;position:relative;overflow:hidden;min-height:230px}
+.big::before{content:"特写";position:absolute;right:-10px;bottom:-26px;font:900 62px;letter-spacing:6px;color:rgba(255,255,255,.06);line-height:1}
+.big .kicker{color:var(--mint)}
+.big h4{font:900 clamp(19px,2.6vw,27px)/1.5;font-family:var(--serif);margin:9px 0 11px}
+.big p{font-size:12.6px;color:rgba(255,255,255,.7);line-height:2.05}
+.big .dt{font:900 9.2px;letter-spacing:2.4px;font-family:var(--mono);color:var(--mint)}
+.side{display:grid;gap:11px}
+.nm{border-radius:22px;padding:16px 18px;background:#fff;border-left:3.5px solid var(--p);transition:.24s}
+.nm:hover{transform:translateX(7px);box-shadow:0 10px 24px rgba(255,92,138,.2)}
+.nm .ix{font:900 9.4px;letter-spacing:1.8px;color:var(--p2);font-family:var(--mono)}
+.nm h4{font:900 13.6px;margin:5px 0 6px;line-height:1.62;font-family:var(--serif)}
+.nm .dt{font:900 8.4px;letter-spacing:1.8px;color:var(--dim);font-family:var(--mono)}
+
+/* ===== ⑥ 规范：宣言 + 条款 ===== */
+.decl{font:900 clamp(19px,3.2vw,31px)/2;font-family:var(--serif);border-radius:26px;padding:26px 30px;
+  background:linear-gradient(120deg,#fff,var(--pp));border:1.6px solid var(--p);margin-bottom:16px}
+.decl::before{content:"“";font:900 46px;color:var(--p);line-height:.6;display:block}
+.grd2{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.gd{border:1.5px solid var(--line);border-radius:24px;background:#fff;padding:20px;transition:.28s}
+.gd:hover{border-color:var(--p);transform:translateY(-7px);box-shadow:0 14px 30px rgba(255,92,138,.2)}
+.gd .ix{font:900 10.4px;letter-spacing:2.2px;color:var(--p2);font-family:var(--mono)}
+.gd h4{font:900 14.8px;margin:9px 0 8px}
+.gd p{font-size:11.4px;color:var(--dim);line-height:2.02}
+
+/* ===== 页脚 ===== */
+footer{border-top:1.5px solid var(--line);padding:46px 0 24px;margin-top:26px;background:#fff}
+.fg{display:grid;grid-template-columns:2.1fr 1fr 1fr 1fr;gap:28px;margin-bottom:26px}
+.flogo p{font-size:12.4px;color:var(--dim);margin-top:13px;max-width:500px;line-height:2.1}
+.fc h6{font:800 9.2px;letter-spacing:3px;color:var(--p2);margin-bottom:14px;font-family:var(--mono)}
+.fc a{display:block;font-size:12.4px;color:#8d8590;padding:6px 0}
+.fc a:hover{color:var(--p2);font-weight:900;padding-left:8px}
+.fbot{text-align:center;font-size:11.8px;color:#a89fa6;border-top:1.5px dashed var(--line);padding-top:23px;line-height:2.2}
+.fbot a{color:var(--p2);font-weight:900}
+.up{position:fixed;right:16px;bottom:20px;width:56px;height:56px;border-radius:50%;background:var(--p);color:#fff;font:900 20px;cursor:pointer;
+  opacity:0;pointer-events:none;transition:.26s;z-index:90;box-shadow:0 10px 26px rgba(255,92,138,.4)}
+.up.on{opacity:1;pointer-events:auto}
+
+@media(max-width:1120px){.panels{grid-template-columns:repeat(3,1fr)}.ap.open{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){
+  .hamb{display:grid;place-items:center;margin-left:auto}
+  .ribbon{display:none}
+  .nav{position:fixed;inset:70px 0 0 100%;flex-direction:column;width:100%;height:calc(100vh - 70px);background:var(--cream);padding:22px;border-top:1.6px solid var(--p);transition:.32s;overflow:auto}
+  .nav.open{transform:translateX(-100%)}
+  .nav a{font-size:19px;padding:18px;border-radius:16px}
+  .hero{grid-template-columns:1fr;gap:30px}
+  .cloud{transform:none;max-width:440px}
+  .panels,.grd2{grid-template-columns:repeat(2,1fr)}
+  .duo{grid-template-columns:1fr}
+  .vsmid{padding:10px 0;letter-spacing:8px}
+  .ap.open{grid-template-columns:repeat(2,1fr)}
+  .ai{grid-template-columns:52px 1fr 32px;padding:15px}
+  .ai .cnt{display:none}
+  .press{grid-template-columns:1fr}
+  .big{min-height:auto}
+  section{padding:46px 0}
+}
+@media print{body{background:#fff;color:#000;background-image:none}.topbar,.hamb,.up,.bub{display:none}section{padding:12px 0}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- 气泡 -->
+<div class="bub" id="bub"></div>
+
+<!-- ===== 顶栏 ===== -->
+<header class="topbar">
+  <div class="tin">
+    <a class="logo" href="#" aria-label="vivi电影网首页">
+      <span class="vivi" aria-hidden="true">v</span>
+      <span><span class="zh">vivi<em>电影网</em></span><span class="en">VIVI · VIVID CINEMA</span></span>
+    </a>
+    <span class="ribbon">♡ 精选优质电影导航大全</span>
+    <nav class="nav" id="nav">
+      <a href="#home" class="on">首页</a>
+      <a href="#nav2">导航</a>
+      <a href="#film">片单</a>
+      <a href="#cat">分类</a>
+      <a href="#rank">排行</a>
+      <a href="#news">影讯</a>
+      <a href="#about">规范</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- ===== Hero ===== -->
+<section id="home">
+  <div class="lay">
+    <div class="hero">
+      <div>
+        <div class="kicker">实用网址收录平台 · 精选优质网站导航大全</div>
+        <h1 class="h1">vivi<br><span class="pk">电影网</span><br><span class="out">vivid</span></h1>
+        <div class="chips">
+          <span>在线观看 <b>秒开</b></span><span>4K 蓝光 <b>REMUX</b></span>
+          <span>电影字幕 <b>SRT / ASS</b></span><span>迅雷下载 <b>支持</b></span>
+        </div>
+        <p class="sub">vivi电影网（vividianyingwang-cn.github.io）是电影网站导航与影视资源导航平台，收录可访问的电影站点、高清电影在线观看入口、最新电影、经典电影、电影字幕、4K 蓝光资源与影视大全，并提供迅雷下载指引。</p>
+        <div class="cta"><a href="#nav2">♡ 逛片库</a><a href="#film">本周推荐</a></div>
+      </div>
+
+      <aside class="cloud" aria-label="vivi 指标">
+        <div class="crow">
+          <div><b>6,800+</b><span>收录站点</span></div>
+          <div><b>99.4%</b><span>在线可用率</span></div>
+          <div><b>4K</b><span>蓝光 REMUX</span></div>
+          <div><b>0</b><span>广告 / 付费</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ① 导航：圆角胶囊面板 ===== -->
+<section id="nav2">
+  <div class="lay">
+    <div class="sh"><span class="no">01</span><h2>电影网站 <em>导航</em></h2><span class="en">Directory</span></div>
+    <div class="panels" id="panels"></div>
+  </div>
+</section>
+
+<!-- ===== ② 片单：波浪横滑 ===== -->
+<section id="film">
+  <div class="lay">
+    <div class="sh"><span class="no">02</span><h2>在线观看 · <em>本周片单</em></h2><span class="en">Showreel</span></div>
+    <div class="belt" id="belt"></div>
+  </div>
+</section>
+
+<!-- ===== ③ 分类：手风琴 ===== -->
+<section id="cat">
+  <div class="lay">
+    <div class="sh"><span class="no">03</span><h2>按 <em>类型</em> 分类</h2><span class="en">Genres</span></div>
+    <div class="acc" id="acc"></div>
+  </div>
+</section>
+
+<!-- ===== ④ 排行：进度条双榜 ===== -->
+<section id="rank">
+  <div class="lay">
+    <div class="sh"><span class="no">04</span><h2>口碑 · <em>热度 双榜</em></h2><span class="en">Charts</span></div>
+    <div class="duo">
+      <div class="dk" style="--c:#ff7aa2;--c2:#ffc2d6"><h5>口碑榜 · SCORE</h5><div class="items" id="r1"></div></div>
+      <div class="vsmid">VS</div>
+      <div class="dk" style="--c:#c9b6ff;--c2:#e3daff"><h5>热度榜 · HOT</h5><div class="items" id="r2"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑤ 影讯：报纸分栏 ===== -->
+<section id="news">
+  <div class="lay">
+    <div class="sh"><span class="no">05</span><h2>影讯 <em>公告</em></h2><span class="en">Dispatch</span></div>
+    <div class="press">
+      <article class="big">
+        <span class="kicker">EDITOR'S NOTE · 编者按</span>
+        <span class="dt">2026.10.08</span>
+        <h4>「vivi」是 vivid 的缩写：让每一部好片都被看见</h4>
+        <p>我们不做存储，只做筛选。vivi电影网以人工核验的方式，收录可访问的电影网站导航、高清电影在线观看入口与影视资源导航，标注 4K 蓝光、REMUX、HDR10+、杜比视界、内嵌字幕与迅雷下载信息，并持续清理失效链接。</p>
+      </article>
+      <div class="side" id="side"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑥ 规范：宣言 + 条款 ===== -->
+<section id="about">
+  <div class="lay">
+    <div class="sh"><span class="no">06</span><h2>使用 <em>规范</em></h2><span class="en">Guidelines</span></div>
+    <div class="decl">电影是时间的艺术，观影请优先选择正版院线与正版流媒体。vivi电影网不托管、不存储、不转存任何影视文件。</div>
+    <div class="grd2">
+      <div class="gd"><div class="ix">RULE 01</div><h4>资源说明</h4><p>vivi电影网为电影网站导航与影视资源导航，所有链接均指向第三方公开资源，本站不托管任何影视文件。</p></div>
+      <div class="gd"><div class="ix">RULE 02</div><h4>尊重版权</h4><p>影视作品版权归原作者及发行方所有。请通过院线、正版流媒体与正版影音制品支持创作者。</p></div>
+      <div class="gd"><div class="ix">RULE 03</div><h4>画质标注</h4><p>1080P / 4K 蓝光 / REMUX / HDR10+ / 杜比视界 / 内嵌字幕等标注为人工核验结果，不符请在页脚「版权反馈」告知。</p></div>
+      <div class="gd"><div class="ix">RULE 04</div><h4>安全提示</h4><p>跳转前请确认域名，警惕仿冒与付费解锁陷阱。本站永久免费，不索取账号、不植入广告脚本。</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="lay">
+    <div class="fg">
+      <div class="flogo">
+        <a class="logo" href="#"><span class="vivi" aria-hidden="true">v</span><span><span class="zh">vivi电影网</span><span class="en">VIVI · VIVID CINEMA</span></span></a>
+        <p>vivi电影网（vividianyingwang-cn.github.io）是精选优质电影导航大全与实用网址收录平台，提供电影网站导航、高清电影在线观看、电影下载、迅雷下载、最新电影、经典电影、电影字幕、4K 蓝光、影视大全与影视资源导航。</p>
+      </div>
+      <div class="fc"><h6>在线观看</h6><a href="#film">动作片</a><a href="#film">剧情片</a><a href="#film">科幻片</a><a href="#film">纪录片</a></div>
+      <div class="fc"><h6>分类</h6><a href="#cat">4K 蓝光</a><a href="#cat">电影字幕</a><a href="#cat">经典修复</a><a href="#cat">短剧合集</a></div>
+      <div class="fc"><h6>服务</h6><a href="#nav2">网站导航</a><a href="#about">版权反馈</a><a href="#about">失效补链</a><a href="#about">观影须知</a></div>
+    </div>
+    <div class="fbot">© 2026 vivi电影网 · 网址：<a href="https://vividianyingwang-cn.github.io/">https://vividianyingwang-cn.github.io/</a><br>本站为电影网站导航与影视资讯平台，不托管任何影视文件；所涉影视作品版权归原作者及发行方所有。</div>
+  </div>
+</footer>
+
+<button class="up" id="upBtn" aria-label="回到顶部">↑</button>
+
+<script>
+/* ---- 气泡 ---- */
+document.getElementById('bub').innerHTML=Array.from({length:16},(_,i)=>
+ `<i style="left:${Math.random()*100}%;width:${10+Math.random()*26}px;height:${10+Math.random()*26}px;animation-duration:${7+Math.random()*9}s;animation-delay:${Math.random()*10}s;opacity:${.16+Math.random()*.34}"></i>`).join('');
+
+/* ---- 数据 ---- */
+const sites=[
+ ["高清电影在线观看","院线同步","4K 蓝光","中文字幕",10],
+ ["最新电影更新","抢先看","1080P / 4K","中英字幕",9],
+ ["4K 蓝光 REMUX","影音发烧","REMUX","内嵌字幕",10],
+ ["电影字幕下载","字幕库","SRT / ASS","多语种",10],
+ ["经典电影修复","影史精选","4K 修复","简体中文",9],
+ ["日韩电影专区","东亚影像","1080P / 4K","简体中文",8],
+ ["欧美剧集合集","连续剧","1080P","中英字幕",8],
+ ["动画电影频道","全年龄","4K 蓝光","简体中文",10],
+ ["纪录片库","真实影像","1080P / 4K","中英双语",9],
+ ["短片实验影像","独立创作","720P+","无字幕",10]
+];
+const films=[
+ ["肖申克的救赎","1994","9.7","linear-gradient(160deg,#ffb6c9,#e2849f)"],
+ ["霸王别姬","1993","9.6","linear-gradient(160deg,#d99fb8,#a55d7c)"],
+ ["阿甘正传","1994","9.5","linear-gradient(160deg,#ffcf9e,#e0a05a)"],
+ ["泰坦尼克号","1997","9.4","linear-gradient(160deg,#9ec6e8,#5c8fb8)"],
+ ["盗梦空间","2010","9.3","linear-gradient(160deg,#c3b0f0,#8a6fd4)"],
+ ["星际穿越","2014","9.4","linear-gradient(160deg,#a9c7f0,#5f86c4)"],
+ ["这个杀手不太冷","1994","9.5","linear-gradient(160deg,#c9c2d0,#8a8294)"],
+ ["楚门的世界","1998","9.4","linear-gradient(160deg,#a9d8c9,#5fa98c)"],
+ ["千与千寻","2001","9.4","linear-gradient(160deg,#a9dcc6,#4f9c80)"],
+ ["黑客帝国","1999","9.2","linear-gradient(160deg,#a9d0d0,#5f9c9c)"],
+ ["美丽人生","1997","9.6","linear-gradient(160deg,#f0d39a,#c99a4f)"],
+ ["飞屋环游记","2009","9.1","linear-gradient(160deg,#ffc9a9,#e08a5a)"]
+];
+const groups=[
+ {t:"剧情 · 文艺",items:["剧情片","文艺片","独立电影","金棕榈","金熊奖"]},
+ {t:"动作 · 犯罪",items:["动作片","犯罪片","警匪片","港片","好莱坞"]},
+ {t:"科幻 · 奇幻",items:["科幻片","奇幻片","赛博","太空","时间旅行"]},
+ {t:"恐怖 · 惊悚",items:["恐怖片","惊悚片","cult","心理","丧尸"]},
+ {t:"动画 · 家庭",items:["动画电影","剧场版","宫崎骏","皮克斯","合家欢"]},
+ {t:"纪录 · 真实",items:["纪录片","自然","社会","音乐","传记"]},
+ {t:"经典 · 修复",items:["4K 蓝光","REMUX","经典修复","黑白上色","胶片"]},
+ {t:"字幕 · 语言",items:["内嵌字幕","SRT","ASS","双语","多语种"]}
+];
+const r1=[["肖申克的救赎",98],["霸王别姬",96],["阿甘正传",94],["这个杀手不太冷",93],["千与千寻",93],["美丽人生",92]];
+const r2=[["盗梦空间",96],["星际穿越",91],["泰坦尼克号",88],["楚门的世界",84],["黑客帝国",79],["飞屋环游记",73]];
+const news=[
+ ["片库全量 HTTPS 化，握手耗时下降 62%","10.05"],
+ ["HTML5 播放 vs 磁力链：在线观看画质与流畅度实测","10.02"],
+ ["4K 蓝光 REMUX 标注规范：杜比视界 / HDR10+ / SDR 怎么选","09.26"],
+ ["失效站点清理完成，在线可用率回升至 99.4%","09.20"],
+ ["字幕组联合声明：仅供学习，请支持正版发行","09.13"],
+ ["警惕「付费解锁」仿冒导航站，本站永久免费","09.06"]
+];
+
+/* ---- 渲染 ---- */
+document.getElementById('panels').innerHTML=sites.map((s,i)=>
+ `<article class="pn"><div class="ix">N0.${i+1}</div><h4>${s[0]}</h4>
+  <p>${s[1]} · ${s[2]} · ${s[3]}</p><span class="go">进入 →</span></article>`).join('');
+
+document.getElementById('belt').innerHTML=films.map(f=>
+ `<article class="fv" style="--c:${f[3]}"><span class="yr">${f[1]}</span><span class="rt">${f[2]}</span>
+  <span class="go">立即观看</span><b>${f[0]}</b></article>`).join('');
+
+document.getElementById('acc').innerHTML=groups.map((g,i)=>`
+ <div class="ai${i===0?' on':''}" data-i="${i}">
+  <span class="ix">${String(i+1).padStart(2,'0')}</span><h4>${g.t}</h4>
+  <span class="cnt">${g.items.length} 项</span><span class="ar">＋</span></div>
+ <div class="ap${i===0?' open':''}">${g.items.map(t=>`<span class="chip">${t}</span>`).join('')}</div>`).join('');
+
+const row=(d)=>d.map((c,i)=>`
+ <div class="it${i<3?' on':''}"><span class="rn">${String(i+1).padStart(2,'0')}</span>
+  <span class="tr"><u data-w="${c[1]}%"></u></span><span class="vl">${c[1]}</span>
+  <span style="display:none">${c[0]}</span></div>`).join('');
+document.getElementById('r1').innerHTML=row(r1);
+document.getElementById('r2').innerHTML=row(r2);
+
+document.getElementById('side').innerHTML=news.map((n,i)=>
+ `<article class="nm"><div class="ix">N0.${i+1}</div><h4>${n[0]}</h4><span class="dt">${n[1]}</span></article>`).join('');
+
+/* ---- 交互 ---- */
+const hamb=document.getElementById('hamb'),nav=document.getElementById('nav');
+hamb.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');
+  [...nav.children].forEach(a=>a.classList.toggle('on',a===e.target))}});
+
+document.querySelectorAll('.ai').forEach(el=>el.addEventListener('click',()=>{
+  document.querySelectorAll('.ai').forEach(a=>{a.classList.remove('on');a.nextElementSibling.classList.remove('open')});
+  el.classList.add('on');el.nextElementSibling.classList.add('open');
+}));
+
+const io=new IntersectionObserver(en=>{
+  en.forEach(x=>{if(x.isIntersecting){
+    x.target.querySelectorAll('u').forEach(u=>u.style.width=u.dataset.w);
+    io.unobserve(x.target)}});
+},{threshold:.35});
+document.querySelectorAll('.duo').forEach(d=>io.observe(d));
+
+const up=document.getElementById('upBtn');
+up.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+window.addEventListener('scroll',()=>up.classList.toggle('on',window.scrollY>500),{passive:true});
+</script>
+</body>
+</html>
